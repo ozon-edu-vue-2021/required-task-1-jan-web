@@ -33,11 +33,7 @@ const getPictures = function (page = 1, limit = 10) {
     fetch(`https://picsum.photos/v2/list?page=${page};limit=${limit}`)
         .then(function (response) {return response.json()})
         .then(function (result) {
-            if(result.length !==0) {
-
-                renderPictures(result)
-            }
-
+            if(result.length !==0) {renderPictures(result)}
         })
 }
 
@@ -157,7 +153,7 @@ const togglePopup = function () {
  */
 const actionHandler = function (evt) {
     evt.preventDefault();
-    const nextPage = parseInt(evt.currentTarget.dataset.page);
+    const nextPage = +evt.currentTarget.dataset.page;
     evt.currentTarget.dataset.page = nextPage + 1;
 
     getPictures(nextPage);
@@ -175,9 +171,10 @@ const actionHandler = function (evt) {
  */
 const imageHandler = function (evt) {
     evt.preventDefault();
+    const closestLink = evt.target.closest('a');
 
-    if (evt.target.closest('a')) {
-        getPictureInfo(evt.target.closest('a').dataset.id);
+    if (closestLink) {
+        getPictureInfo(closestLink.dataset.id);
     }
 }
 
