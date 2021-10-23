@@ -22,6 +22,7 @@ a:hover {
 
 button {
     display: block;
+    margin: 0 auto;
     border: none;
     color: #fff;
     cursor: pointer;
@@ -55,7 +56,6 @@ main {
     font-size: 16px;
     padding: 10px 20px;
     border-radius: 6px;
-    margin: 10px 0;
 }
 
 .action:hover {
@@ -72,7 +72,7 @@ main {
     min-height: 400px;
 }
 
-a {
+a img{
     display: inline-block;
     border-radius: 6px;
     overflow: hidden;
@@ -80,7 +80,7 @@ a {
     min-height: 100px;
 }
 
-a:nth-child(n) {
+/* a:nth-child(n) {
     background-color: #EFEBE9;
 }
 
@@ -90,7 +90,7 @@ a:nth-child(2n) {
 
 a:nth-child(3n) {
     background-color: #BCAAA4;
-}
+} */
 
 /* Popup style */
 .popup .content {
@@ -126,14 +126,14 @@ figcaption {
     bottom: 0;
     right: 0;
     background-color: rgba(33, 33, 33, 0.5);
-    z-index: -1;
+    z-index: 1;
 }
 
 .popup.open {
     visibility: visible;
 }
 
-.action {
+.popup .action {
     position: absolute;
     top: 50px;
     right: 50px;
